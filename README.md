@@ -1,27 +1,28 @@
 # Django REST Framework Demo
 
 ## Docker and K8s
-### Build image and tag it
+### 1.Build image and tag it
 - `docker build -t <your docker hub>/django-rest-framework-demo .`
-### Test image
+### 2.Test image
 - `docker run -p 8001:8001 <your docker hub>/django-rest-framework-demo:latest` 
 
-### Push to your Docker Hub
+### 3.Push to your Docker Hub
 - `docker login` 
 - `docker push <your docker hub>/django-rest-framework-demo:latest`
 
-### Set up by K8s
-#### Create pods and test it
-- `kubectl create -f pod.yaml`
-- `kubectl port-forward pod 8001:8001`
-#### Create service and check it
-- `kubectl create -f service.yaml`
-- `kubectl get pods`
-#### Create deployment and ingress
+### 4.Set up by K8s
+#### 4a.Create deployment and check it
 - `kubectl create -f deployment.yaml`
+- `kubectl get deployments`
+#### 4b.Create service and check it
+- `kubectl create -f service.yaml`
+- `kubectl get services`
+#### 4c.Create ingress and modify /etc/host
 - `minikube addons enable ingress` 
 - `kubectl create -f ingress.yaml`
-#### Start minikube dashboard
+- `minikube ip`
+- copy ip and story in /etc/host
+#### 4d.Start minikube dashboard
 - `minikube dashboard`
 
 ## Reference
