@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-backend-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: demo-backend-nginx
+  template:
+    metadata:
+      labels:
+        name: demo-backend-nginx
+    spec:
+      containers:
+        - name: demo
+          image: zoejoyuliao/django-rest-framework-demo 
+          ports:
+            - containerPort: 8001

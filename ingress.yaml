@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: web
+spec:
+  rules:
+    - host: zoeliao.demo.com
+      http:
+        paths:
+          - backend:
+              serviceName: demo-backend-service 
+              servicePort: 80
