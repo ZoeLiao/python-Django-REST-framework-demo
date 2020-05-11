@@ -55,7 +55,8 @@ class UsersView(GenericAPIView):
                description='Image',
                type=openapi.TYPE_FILE
            ),
-       ]
+       ],
+       deprecated=True
     )
     def post(self, request, *args, **krgs):
         data = request.data
