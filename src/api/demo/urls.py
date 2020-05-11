@@ -22,14 +22,16 @@ from django.urls import (
     path,
     re_path,
 )
+from user import views as user_view
 
 
 # basic urls
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include([
-        path('users/', include('user.urls')),
-    ]))
+    path('users/', user_view.UsersView.as_view()),
+    #path('api/', include([
+    #    path('users/', include('user.urls')),
+    #]))
 ]
 
 

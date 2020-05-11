@@ -1,10 +1,9 @@
-from django.shortcuts import render
 from django.http import JsonResponse
 from django.db import transaction
 from rest_framework.generics import GenericAPIView
 
-from user.serializers import UserSerializer 
-from django.contrib.auth.models import User
+from user.serializers import UserSerializer
+from user.models import User
 
 
 class UsersView(GenericAPIView):
@@ -28,4 +27,4 @@ class UsersView(GenericAPIView):
             data = serializer.data
         except Exception as e:
             data = {'error': str(e)}
-        return JsonResponse(data, safe=False)
+        return JsonResponse(data)
