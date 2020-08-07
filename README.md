@@ -27,3 +27,4 @@
 
 ## Reference
 - [Kubernetes 基礎教學（二）實作範例：Pod、Service、Deployment、Ingress](https://medium.com/@C.W.Hu/kubernetes-implement-ingress-deployment-tutorial-7431c5f96c3e)
+- [How Django can handle 100 millions of requests per day](https://medium.com/ebs-integrator/how-django-can-handle-100-millions-of-requests-per-day-c4cdbf48639e)
